@@ -55,6 +55,12 @@ body{
     border-radius: 10px;
     overflow: hidden;
     opacity: 0.8;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 0.8; transform: translateY(0);}
 }
 
 .card .myInfo{
@@ -66,9 +72,12 @@ body{
 }
 
 .card .myInfo img {
-    border-radius: 50px;
-    /*border: 4px solid cor; <- borda redonda pra foto, não precisei*/
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
 }
+
 
 .card .myInfo .name {
     font-size: 26px;
@@ -76,6 +85,16 @@ body{
 
 .card .myInfo .role {
     color: #b8bbc5
+}
+
+.role::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
 }
 
 .card .content{
@@ -105,8 +124,9 @@ body{
     transition: background-color 0.2s ease-in-out;
 }
 
-.card .tabs .tab.select{
+.card .tabs .tab.select {
     background-color: #262626;
+    box-shadow: inset 0 -3px 0 #e126d9;
 }
 
 .card .tabInfo {
@@ -138,6 +158,7 @@ body{
     max-height: 180px;
     overflow-y: auto;
     padding: 15px;
+    text-align: justify;
 }
 
 .tabInfo .description span {
