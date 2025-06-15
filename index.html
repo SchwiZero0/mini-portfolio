@@ -7,6 +7,7 @@
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="icon" type="image/png" href="./arquivos/favicon.png">
       <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="style.css">
@@ -55,13 +56,29 @@
 
                     <ul class="social">
                         <li>
-                            <a href="./arquivos/curriculo-mauricio-belina.pdf" download="Currículo - Maurício Belina" class="curriculo">Currículo</a>
+                            <a href="./arquivos/curriculo-mauricio-belina.pdf" download="Currículo - Maurício Belina" class="button-link curriculo">📄 Currículo</a>
                         </li>
                         <li>
-                            <a href="" target="_blank" class="linkedin">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/maurício-belina-779056369/" target="_blank" class="button-link linkedin">
+                            <span class="icon">
+                            <!-- Ícone LinkedIn -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f3f3f3" viewBox="0 0 24 24">
+                                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.4V24h-4v-7.9c0-1.9 0-4.3-2.6-4.3-2.6 0-3 2-3 4.1V24h-4V8z"/>
+                            </svg>
+                            </span>
+                            LinkedIn
+                            </a>
                         </li>
                         <li>
-                            <a href="" target="_blank" class="github">GitHub</a>
+                            <a href="https://github.com/SchwiZero0" target="_blank" class="button-link github">
+                            <span class="icon">
+                            <!-- Ícone GitHub -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f3f3f3" viewBox="0 0 24 24">
+                                <path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.4 1.2-3.3 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.4 1.3 1-.3 2-.5 3-.5s2 .2 3 .5c2.4-1.6 3.4-1.3 3.4-1.3.6 1.6.1 2.8.1 3.1.7.9 1.2 2 1.2 3.3 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2v3c0 .3.2.7.8.6 4.6-1.6 8-6.1 8-11.4C24 5.9 18.6.5 12 .5z"/>
+                            </svg>
+                            </span>
+                            GitHub
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -70,10 +87,37 @@
                     <h3 class="sub-title">Meus projetos</h3>
 
                     <ul class="projetos">
-                        <li>
-                            <a href="index.html" class="mini-portfolio">Teste</a>
+                        <li class="projeto">
+                            <button class="projeto-titulo">Mini-Portfólio</button>
+                            <div class="projeto-descricao">
+                                <p>Website com intenção de funcionar como apresentação informal sobre mim, redes sociais e projetos feitos. <br>Você está nesse projeto nesse momento.</p>
+                                <div class="botao-centro">
+                                    <a href="index.html" target="_blank" class="button-link mini-portfolio">Clique aqui para ver!</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="projeto">
+                            <button class="projeto-titulo">Amor Eternizado</button>
+                            <div class="projeto-descricao">
+                                <p>Website feito com intenção de homenagear minha namorada; exibindo versatilidade técnica e capacidade de entregar um produto final, independentemente do objetivo.</p>
+                                <div class="botao-centro">
+                                <a href="https://amor-eternizado.pages.dev" target="_blank" class="button-link amor-eternizado">Clique aqui para ver!</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="projeto">
+                            <button class="projeto-titulo">Termu - Discord Bot</button>
+                            <div class="projeto-descricao">
+                                <p>Um bot do discord que conta com mais de 15 comandos e diferentes tipos de funções/eventos, cada um com sua diferente finalidade, administrando um sistema interno do servidor chamado de Quota System e manipulando dados usando JSON. O código está disponível para acesso via repositório privado do GitHub, caso desejado. </p>
+                                <div class="botao-centro">
+                                <a href="https://github.com/SchwiZero0" target="_blank" class="button-link termu"> Código disponível sob solicitação. </a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </div>
