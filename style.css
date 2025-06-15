@@ -174,22 +174,34 @@ body{
     overflow-y: auto;
 }
 
-.social li a {
+.button-link {
     width: 250px;
     display: block;
     color: #f3f3f3;
     text-align: center;
     padding: 10px;
     font-size: 20px;
-    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.button-link:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.button-link:active {
+    transform: scale(0.95);
 }
 
 .social .curriculo {
-    background-color: #06c185;
+    background-color: #00c98d;
 }
 
 .social .linkedin {
-    background-color: #1d87bd;
+    background-color: #0077b5;
 }
 
 .social .github {
@@ -205,21 +217,64 @@ body{
     overflow-y: auto;
 }
 
-.projetos li a {
-    width: 250px;
-    display: block;
-    color: #f3f3f3;
+.projeto-descricao {
+    text-align: justify;
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #1c1c1c;
+    border-radius: 6px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.projeto-descricao a {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.botao-centro {
+    display: flex;
+    justify-content: center;
+}
+
+.projeto-titulo {
+    width: 100%;
     text-align: center;
     padding: 10px;
-    font-size: 20px;
-    transition: opacity 0.3s ease-in-out;
+    border: none;
+    background-color: #333;
+    color: #f3f3f3;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.projeto-titulo:hover {
+    background-color: #444;
+}
+
+.projeto-titulo:focus {
+    outline: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .projetos .mini-portfolio {
-    background-color: red;
+    background-color: #e126d9;
 }
 
-.social li a:hover{
-    opacity: 0.8;
+.projetos .amor-eternizado {
+    background-color: #fb94ff;
 }
 
+.projetos .termu {
+    background-color: #47afff;
+}
