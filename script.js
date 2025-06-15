@@ -34,3 +34,17 @@ function showTabInfo (aba) {
 
    showInfo.classList.add("select")
 }
+
+const botoesProjetos = document.querySelectorAll(".projeto-titulo");
+
+botoesProjetos.forEach(botao => {
+    botao.addEventListener("click", () => {
+        const descricao = botao.nextElementSibling;
+
+        if (descricao.style.display === "block") {
+            descricao.style.display = "none";
+        } else {
+            descricao.style.display = "block";
+        }
+    });
+});
