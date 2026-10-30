@@ -1,50 +1,28 @@
-//1 - pegar os elementos que representam as abas no HTML
-const abas = document.querySelectorAll(".tab"); 
+const tabs = [...document.querySelectorAll('[role="tab"]')];
 
-//2 - identificando o click no elemento da aba
-abas.forEach(aba => { 
-    aba.addEventListener("click", function() {
-
-        if (aba.classList.contains("select")){
-            return;
-        }
-        selectTab(aba)
-        showTabInfo(aba)
+function activateTab(tab) {
+    tabs.forEach(item => {
+        const selected = item === tab;
+        item.classList.toggle('select', selected);
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
     });
-});
-
-function selectTab(aba){
-    //3 - remover o selecionado da aba que estava selecionada antes
-    const abaSelecionada = document.querySelector(".tab.select");
-    abaSelecionada.classList.remove("select");
-
-    //4 - marcar a aba clicada como selecionada
-    aba.classList.add("select");
 }
 
-function showTabInfo (aba) {
-    //5 - esconder o conteúdo da anterior, que não está selecionada
-    const infoSelecionada = document.querySelector(".info.select");
-    infoSelecionada.classList.remove("select");
-
-   //6 - mostrar o conteúdo da aba selecionada
-   const idElementoInfoAba = `info-${aba.id}`
-   
-   const showInfo = document.getElementById(idElementoInfoAba);
-
-   showInfo.classList.add("select")
-}
-
-const botoesProjetos = document.querySelectorAll(".projeto-titulo");
-
-botoesProjetos.forEach(botao => {
-    botao.addEventListener("click", () => {
-        const descricao = botao.nextElementSibling;
-
-        if (descricao.style.display === "block") {
-            descricao.style.display = "none";
-        } else {
-            descricao.style.display = "block";
+tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', event => {
+        let nextIndex;
+        switch (event.key) {
+            case 'ArrowRight': nextIndex = (index + 1) % tabs.length; break;
+            case 'ArrowLeft': nextIndex = (index - 1 + tabs.length) % tabs.length; break;
+            case 'Home': nextIndex = 0; break;
+            case 'End': nextIndex = tabs.length - 1; break;
+            default: return;
         }
+        event.preventDefault();
+        activateTab(tabs[nextIndex]);
+        tabs[nextIndex].focus();
     });
 });
